@@ -15,13 +15,6 @@ public class UltimateQATest extends BaseTestSetup {
         Assertions.assertEquals( "Button success", textButtonSuccess.getText());
     }
 
-    //input[@id='et_pb_contact_name_0']   1 out of 1
-    //input[@class='input et_contact_error']   1 out of 2
-    //input[@class='input et_contact_error' and @id='et_pb_contact_name_0']
-    //input[@placeholder='Name']
-    //*[@placeholder='Name']
-    //*[] - ogolna postac XPath
-
     @Test
     public void testTwo() throws InterruptedException {
         WebElement inputName = driver.findElement(By.xpath("//input[@id='et_pb_contact_name_0']"));
@@ -35,6 +28,8 @@ public class UltimateQATest extends BaseTestSetup {
         WebElement buttonEmailMe = driver.findElement(By.xpath("//*[text()=\"Email Me!\"]"));
         Assertions.assertTrue(buttonEmailMe.isDisplayed());
         buttonEmailMe.click();
+
+        Thread.sleep(2000);
 
         WebElement textThanks = driver.findElement(By.xpath("//*[@id='et_pb_contact_form_0']//p"));
         Assertions.assertEquals("Thanks for contacting us", textThanks.getText());

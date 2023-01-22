@@ -19,6 +19,6 @@ public class BaseTestSetup {
     @AfterEach
     public void teardown() {
 
-      //  driver.close();
+       driver.close();
     }
 }
